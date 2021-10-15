@@ -4,6 +4,7 @@ import { Routes, Route, NavLink } from "react-router-dom";
 
 import Tasks from "../Tasks";
 
+import Origin from "./origin";
 import styles from "./styles.module.scss";
 
 const App = () => (
@@ -13,13 +14,15 @@ const App = () => (
         <NavLink to="/" end>
           Home
         </NavLink>{" "}
-        | <NavLink to="dashboard">Dashboard</NavLink>
+        | <NavLink to="dashboard">Dashboard</NavLink>|{" "}
+        <NavLink to="map">Map</NavLink>
       </nav>
     </header>
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/map" element={<GoogleMap />} />
       </Routes>
     </main>
   </>
@@ -38,6 +41,12 @@ const Home = () => (
 const Dashboard = () => (
   <>
     <h1>Dashboard</h1>
+  </>
+);
+
+const GoogleMap = () => (
+  <>
+    <Origin />
   </>
 );
 
